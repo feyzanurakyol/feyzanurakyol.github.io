@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style>
+.text {text-align: justify;}
+.centertext {text-align: center;}
+.text {
+  background-color: lightgrey;
+  width: 500px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+text-align: justify;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.text {
+  background-color: lightgrey;
+  width: 900px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
+
+
+
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"  href="style.css"
+</head>
+
+<body background="#330033 ">
+
+
+<body>
+
+<div class="navbar">
+  <div class="subnav">
+     <a href="İndex1.html">Project Definition</a> 
+   
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Modules <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="design.html">Mechanical Design and Implement</a>
+      <a href="design.html">Desktop Application and Visual Recognition</a>
+      <a href="design.html">Mobile Application</a>
+      <a href="design.html">Test and Simulation</a>
+    </div>
+  </div> 
+  <div class="subnav">
+    <a href="members.html">Group Members</a> 
+  </div>
+  <div class="subnav">
+    <a href="videos.html">Videos</a> 
+  </div>
+  <a href="#contact">Contact</a>
+</div>
+<br>
+<main>
+
+<section>
+
+<br><br><br>
+<div class="centertext" text-align: justify;><h3>MECHANICAL DESIGN AND IMPLEMENTED</h3></div><br>
+<div class="text" text-align: justify; style="width:800px; margin:0 auto;"><br>
+Before transferring the progress and design decisions of the module’s internal studies, you can reach the
+demo video, which briefly shows the chronological differences and stages in the development process, from the
+following link: <a href="https://youtu.be/fZuPE84c7dk">Click</a>
+<br>To create the design, we printed 4 arms at first with a 3D printer. After the arms are printed, we wanted
+to use the servos that we have available, but it caused a lot of vibration because their power was insufficient
+although raised up to 7.2 volts also their gears were plastic. Thus, we ordered 4 servos with metal gears whose
+strength of the one is 10-12 kg/cm and a plexiglass.
+<br><br>
+<center><img src="DesignOfTheArms.png" style="width:380px"></center><br><br>
+<hr>
+<center><img src="DesignAfterSetup.png" style="width:230px"></center><br><hr><br>
+
+<h3>NodeMCU v3 Wifi Development Module
+</h3>
+We order NodeMCU in order to use to obtain angle values for the motors by calculating the height and
+coordinate information of the ball with the camera and to provide communication between the mobile and the
+hardware module. First we used computer to calulate the required
+calculations temporarily. After we bought NodeMCU We transferred data via wifi provided by NodeMCU.
+<br><br>
+<center><img src="Node.png" style="width:170px"></center><br><hr><br>
+
+<h3>Servo Motor </h3>
+4 servo motors used to provide the movement. They are moving in a way to keep the ball balanced on the
+surface according to the specified coordinates with the camera.
+
+According to the data it receives from NodeMCU, it gains an angle and applies force, thus, it gives the plate
+up and down movement.<br><br>
+
+<center><img src="servo.png" style="width:160px"></center><br><hr><br>
+
+<h3>Pushrod </h3>
+Pushrods applying the motion from the motors to the plate, it gives the plate the desired motion and also
+keep the plate balance<br><br>
+
+</div>
+
+</body>
+
+
+</html>
+

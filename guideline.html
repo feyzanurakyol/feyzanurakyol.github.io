@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style>
+.text {text-align: justify;}
+.centertext {text-align: center;}
+.text {
+  background-color: lightgrey;
+  width: 500px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+text-align: justify;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.text {
+  background-color: lightgrey;
+  width: 900px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
+
+
+
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism.css" integrity="sha512-jtWR3pdYjGwfw9df601YF6uGrKdhXV37c+/6VNzNctmrXoO0nkgHcS03BFxfkWycOa2P2Nw9Y9PCT9vjG9jkVg==" crossorigin="anonymous" />
+
+</head>
+
+<body background="#330033 ">
+
+
+<body>
+
+<div class="navbar">
+  <div class="subnav">
+     <a href="İndex1.html">Project Definition</a> 
+   
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Modules <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="design.html">Mechanical Design and Implement</a>
+      <a href="desktopApplication.html">Desktop Application and Visual Recognition</a>
+      <a href="mobile.html">Mobile Application</a>
+      <a href="simulation.html">Test and Simulation</a>
+    </div>
+  </div> 
+ <div class="subnav">
+    <a href="guideline.html">Installation Guide</a> 
+  </div>
+  <div class="subnav">
+    <a href="members.html">Group Members</a> 
+  </div>
+  <div class="subnav">
+    <a href="videos.html">Videos</a> 
+  </div>
+  <a href="#contact">Contact</a>
+</div>
+<br>
+<main>
+
+<section>
+
+<br><br><br>
+<div class="centertext" text-align: justify;><h3>INSTALLATION GUIDE</h3></div><br>
+<div class="text" text-align: justify; style="width:800px; margin:0 auto;"><br>
+<h4>1 Requirements</h4>
+In order to run Ball Bouncer without a problem you need either Linux or
+Windows OS which has at least two available USB ports, minimum 4th generation i5 processor and the computer should have installed and able to run
+the OpenCV 4.x.x versions without a problem. Also in order to run the mobile
+application you need a smart phone which has minimum Android 9(pie) OS.
+<br><br>
+<center><img src="system.png" style="width:380px"></center><br><br>
+<hr>
+<h4>2 Connecting the system to computer</h4>
+You need to connect two USB ports from system to computer in order to
+install required drivers automatically. Serial port communication addresses may
+be required in the future so setting them up will be helpful to us in first stage.
+For Windows you can set it through the task manager and for Linux you can
+set it with sudo setserial -g /dev/ttyUSB[0123] command. The last cable that
+needs to be connected to electrical outlet which provides the power of system
+with an adapter.
+<hr>
+<h4>3 Setting up the software:</h4>
+You need to open the “ballbouncer.cpp” source code with any text editor and
+find that code piece:
+<pre><code class="language-clike">
+#ifdefined ( WIN32 ) | | defined ( WIN64 )
+#include <io.h>
+#define SERIALPORT ”COM4”
+#endif
+#ifdef linux
+#include <unistd.h>
+#define SERIAL PORT ”/dev/ttyUSB0”
+#endif
+#define CAMERAID 0 // CameraID
+int mode = BOUNCER;
+</code></pre>
+<hr><br><br>
+In this section, depending on the type of OS, the port communication
+numbers that we set up in earlier stages needs to be replaced in the code. If
+there are only one camera is connected to system then the CAMERA ID preprocessor macro needs to be set up to zero. If there are another camera is
+connected we may need to change that macro as one.
+<br><br><hr><br>
+Lastly, the system will run as default ball bouncing mode. If desired the
+“mode” integer variable can be changed like: NORMAL BOUNCER, SQUARE
+CROSS macros. You can also do this when runnning the program with command line parameters as normal, bouncer, cross, square etc.
+<br><hr><br>
+In Linux systems you can build the program with executing make command.
+Before running program, for Linux systems you need a root privilege with “sudo
+su” because we’ll be reaching to system ports. After getting root privilege you
+can run the program as ./ballbouncer and drop the orange ping pong ball into
+the system. In order to build the system in Windows you can use Visual Studio.
+You can either create new project or import the project that already available
+in files. Also before building the project you need to set those settings in this
+link:<a href="https://www.deciphertechnic.com/install-opencv-with-visual-studio/">Click</a><br> 
+After that the project will be built without any problems.
+<br>
+
+
+
+<h4>4 Installing the mobile app and connecting to the system</h4>
+You need to copy the file named with app-release.apk to an Android device.
+In order to complete installation you need to follow unsigned application installation stages. In the next stage you need to switch off the cellular data of device
+and connect BALLBOUNCER network wih Wi-Fi. For password you need to
+enter “12345678” and connect the Access point on the system.
+After that you can open the app “mobile app” that we’ve installed. When
+the system starts up, you will be able to follow the x, y and h informations of
+the ball in real time through this application.<br>
+
+<h4>5 Settings that may need to be made in the system(Important)</h4>
+PID values in pidServoX config and pidServoY config files may need to be set
+up in its context according to processing power for per second. Also when the
+system is running depending on the light situation you may need to set HighH
+LowS and LowW variables on Thresholded Image screen. By doing this you will
+need to find a specific setting that ball itself will be completely white and the
+other parts will be black.
+
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js" integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ==" crossorigin="anonymous"></script>
+</body>
+
+</html>
+

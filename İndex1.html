@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style>
+.text {text-align: justify;}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.text {
+  background-color: lightgrey;
+  width: 900px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
+
+
+
+<meta charset="UTF-8">
+<title>CSE396SummerProjectGroup2</title>
+<link rel="stylesheet" type="text/css"  href="style.css">
+</head>
+
+<body background="#330033 ">
+
+
+<div class="navbar">
+  <div class="subnav">
+     <a href="İndex1.html">Project Definition</a> 
+   
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Modules <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="design.html">Mechanical Design and Implement</a>
+      <a href="desktopApplication.html">Desktop Application and Visual Recognition</a>
+      <a href="mobile.html">Mobile Application</a>
+      <a href="simulation.html">Test and Simulation</a>
+    </div>
+  </div> 
+ <div class="subnav">
+    <a href="guideline.html">Installation Guide</a> 
+  </div>
+  <div class="subnav">
+    <a href="members.html">Group Members</a> 
+  </div>
+  <div class="subnav">
+    <a href="videos.html">Videos</a> 
+  </div>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main>
+<br>
+<center><img src="GTU.png" style="width:270px"></center><br><br>
+
+<section>
+
+<div class="text" text-align: justify; style="width:800px; margin:0 auto;"><br>
+<center><h3>DEFINITION OF THE PROJECT</h3></center>
+The aim of the group project is to construct a ping pong ball bounder similar to that of the one given in
+the video file. The overall position on the plate (with respect to x and y coordinates ) and an estimate of
+the height of the ball above the plate should be plotted in real-time both on a host computer and a
+remote mobile device (an android phone). The mechanism should also be able to move a ping pong ball
+placed on top of the glass table in a predetermined 2D trajectory.
+Do not try to construct a mechanism as professional as the one given in the video file. You may use
+simple hobby servo motors for actuation and a plexiglass plate supported by four bars. We expect the
+strong part of the project on the embedded code, graphical user interface on the host computer and the
+android app displaying the position of the ball in real-time.
+All codes (except for the android app) should be written using C or C++ with only using open source
+libraries and hardware.<br><br>
+<div>
+The aim of our project is to bounce a colored ball left on a transparent tray by using image recognition algorithms by keeping it balanced 
+on the table. In addition to this, there are 3 additional features in our project, the first of which is to keep the ball in balance 
+in the middle of the table without bouncing, secondly, to move the ball by following a square route on the table and the third and lastly,
+the cross movement by passing the ball through the cross balance points. All these processes are shown in real time both on the mobile and 
+desktop application in 2D, besides, the height of the ball from the table is calculated during the bounce stage.
+</div>
+<center><video width="320" height="240"  controls="controls">
+<source src="bouncer.mp4  ">
+</video>
+
+</center>
+</div>
+<br><br><br>
+</section>
+</main>
+<br><br><br>
+</body>
+
+
+
+
+</html>

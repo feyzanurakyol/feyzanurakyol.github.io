@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style>
+.text {text-align: justify;}
+.centertext {text-align: center;}
+.text {
+  background-color: lightgrey;
+  width: 500px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+text-align: justify;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.text {
+  background-color: lightgrey;
+  width: 900px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
+
+
+
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"  href="style.css"
+</head>
+
+<body background="#330033 ">
+
+
+<body>
+
+<div class="navbar">
+  <div class="subnav">
+     <a href="İndex1.html">Project Definition</a> 
+   
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Modules <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="design.html">Mechanical Design and Implement</a>
+      <a href="desktopApplication.html">Desktop Application and Visual Recognition</a>
+      <a href="mobile.html">Mobile Application</a>
+      <a href="simulation.html">Test and Simulation</a>
+    </div>
+  </div> 
+ <div class="subnav">
+    <a href="guideline.html">Installation Guide</a> 
+  </div>
+  <div class="subnav">
+    <a href="members.html">Group Members</a> 
+  </div>
+  <div class="subnav">
+    <a href="videos.html">Videos</a> 
+  </div>
+  <a href="#contact">Contact</a>
+</div>
+<br>
+<main>
+
+<section>
+
+<br><br><br>
+<div class="centertext" text-align: justify;><h3>DESKTOP APPLICATION AND VISUAL RECOGNATION</h3></div><br>
+<div class="text" text-align: justify; style="width:800px; margin:0 auto;"><br>
+In the project, it was necessary to visually identify and position the object on the plate. 
+For this, we usedthe OpenCV library in C++. In the process of determining the position of the object, we knew that someoperations would be applied to its image matrix 
+(such as converting color, blurring, eroding or dilating), andconsequently this could hinder the real-time process of the system.
+Therefore, in the image processing phase, we needed an algorithm that was optimized as much as possible.And by trying a few algorithms in C++, we started some tests. 
+First of all, we used the Hough transformmethod, which is used in many fields such as image analysis, computer vision, and digital image processing todetect a single object. 
+Then, we tried these codes on our system where pid operations are not ready yet, butstill at the appropriate stage for performing visual recognition tests.
+As a result, when we decided that this method caused performance problems in the system, we looked fordifferent algorithms and methods. 
+And we wrote our final implementation with Image Moments. 
+It showedgood results in tests.We provided an input to a PID function with the coordinates we obtained with the image recognition processand the balancing points we determined earlier. 
+We obtained the necessary slope on the surface by turning themotors in the system to their required positions according to the error rates we obtained here.
+ During PIDtraining, we applied the following methods.<br>We use to tune a PID the following steps:<br><br>1. Set all gains to zero.<br>2. Increase the P gain until the response to a disturbance is steady oscillation.<br>3. Increase the D gain until the the oscillations go away (i.e. it’s critically damped).<br>4. Repeat steps 2 and 3 until increasing the D gain does not stop the oscillations.<br>5. Set P and D to the last stable values.<br>6. Increase the I gain until it brings you to the set point with the number of oscillations desired.
+<br><br>
+What and how were the structures used in the project made?<br><br>
+<h4>• Why has the 640x360 image taken from the camera been reduced to 490x335?<br><br></h4>
+There are two reasons for this. The camera lens used on the system was replaced with another one because the angle of its original lens was too narrow for the system. 
+Therefore, blank black areas appeared on the edges, as the new lens attached offers an angle close to fish eye and is not compatible with the camera's sensor. 
+Since these blank black areas increase the matrix size for unnecessary operations in image recognition at runtime, unnecessary parts for us are cropped.
+
+<h4><br>• Why are Moments used instead of Hough Circle Transform?<br></h4>
+The Hough Circle Transform system operates with sufficient performance when the matis size is small and there is only one round object on the screen, but the performance of the system drops significantly when other round objects enter the screen. In addition, the image of the ball falling on the camera during the bounce stage may lose its round structure due to light reflections, and this caused problems in the recognition process. Moments structure works on recognizing moving objects, not round objects in the image. And it gave a faster and more stable result than the Hough Circle Transform system. We can easily reach the area of the object defined in the moment structure.
+<div>
+ <a href="https://docs.opencv.org/4.4.0/d8/d23/classcv_1_1Moments.html#details">https://docs.opencv.org/4.4.0/d8/d23/classcv_1_1Moments.html#details</a><br>
+ <a href="https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough_circle/hough_circle.html">https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough_circle/hough_circle.html</a>
+</div>
+
+
+
+</div>
+
+</body>
+
+
+</html>
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style>
+.text {text-align: justify;}
+.centertext {text-align: center;}
+.text {
+  background-color: lightgrey;
+  width: 500px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+text-align: justify;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.text {
+  background-color: lightgrey;
+  width: 900px;
+  border: 15px SlateGray;
+  padding: 25px;
+  margin: 20px;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
+
+
+
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"  href="style.css"
+</head>
+
+<body background="#330033 ">
+
+
+<body>
+
+<div class="navbar">
+  <div class="subnav">
+     <a href="İndex1.html">Project Definition</a> 
+   
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Modules <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="design.html">Mechanical Design and Implement</a>
+      <a href="desktopApplication.html">Desktop Application and Visual Recognition</a>
+      <a href="design.html">Mobile Application</a>
+      <a href="simulation.html">Test and Simulation</a>
+    </div>
+  </div> 
+ <div class="subnav">
+    <a href="guideline.html">Installation Guide</a> 
+  </div>
+  <div class="subnav">
+    <a href="members.html">Group Members</a> 
+  </div>
+  <div class="subnav">
+    <a href="videos.html">Videos</a> 
+  </div>
+  <a href="contact.html">Contact</a>
+</div>
+<br>
+<main>
+
+<section>
+
+<br><br><br>
+<div class="centertext" text-align: justify;><h3>MOBILE APPLICATION</h3></div><br>
+<div class="text" text-align: justify; style="width:800px; margin:0 auto;"><br>
+In order to create a mobile application which will allow the user to watch the current position of ball simultaneously and get the 
+coordinates information,Flutter is used on Android Studio platform.Flutter is an open-source UI software development kit created by Google.
+So far,random coordinates are generated each second to simulate the app without getting in touch with the actual hardware.
+The mobile app is kept as simple as possible in order to integrate new updates.
+The next goal is to integrate the mobile application with hardware and show the identical position of the ball.
+<div>
+<center><video width="320" height="240"  controls="controls">
+<source src="mobile.mp4  ">
+</video>
+</div>
+</div>
+
+</body>
+
+
+</html>
+
